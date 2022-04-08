@@ -4,10 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, AuthenticationModule],
+  imports: [BrowserModule, AppRoutingModule, AuthenticationModule, BrowserAnimationsModule],
   providers: [{ provide: APP_BASE_HREF, useValue: '/mor' }],
   bootstrap: [AppComponent],
 })
