@@ -4,12 +4,16 @@ import { AuthenticationComponent } from './authentication.component';
 
 const routes: Routes = [
   {
-    path: '/signin',
+    path: '',
     component: AuthenticationComponent,
   },
   {
-    path: '/**',
+    path: 'signin',
     component: AuthenticationComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '/signin',
   },
 ];
 

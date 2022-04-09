@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class AuthenticationService {
   private _isAuthenticated: boolean = false;
 
@@ -12,7 +10,7 @@ export class AuthenticationService {
 
   public authenticate(redirect = true): Observable<any> {
     this._isAuthenticated = true;
-    if (redirect) this.router.navigate(['']);
+    if (redirect) this.router.navigate(['home']);
     return of(this._isAuthenticated);
   }
 

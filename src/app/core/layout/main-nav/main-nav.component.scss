@@ -1,0 +1,25 @@
+.navigation {
+  .menu {
+    list-style: none;
+    padding: 12px;
+    margin: 0;
+
+    .item {
+      width: 200px;
+
+      .link {
+        text-decoration: none;
+        color: #000;
+        display: block;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: var(--primary-light);
+        & > .link {
+          color: var(--primary);
+        }
+      }
+    }
+  }
+}

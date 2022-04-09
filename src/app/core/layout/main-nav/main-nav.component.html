@@ -1,0 +1,28 @@
+<nav class="navigation">
+  <ul class="menu flex-justify-align-center">
+    <li class="item">
+      <a class="link flex-justify-align-center" routerLink="/home">
+        <mat-icon>dashboard</mat-icon>
+        <span class="nav-caption">Dash</span>
+      </a>
+    </li>
+    <li class="item">
+      <a class="link flex-justify-align-center" routerLink="/monthly-report">
+        <mat-icon>summarize</mat-icon>
+        <span class="nav-caption">Monthly Report</span>
+      </a>
+    </li>
+    <li class="item">
+      <a class="link flex-justify-align-center" routerLink="/users">
+        <mat-icon>people</mat-icon>
+        <span class="nav-caption">Users</span>
+      </a>
+    </li>
+    <li class="item">
+      <a class="link flex-justify-align-center" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span class="nav-caption">Logout</span>
+      </a>
+    </li>
+  </ul>
+</nav>
