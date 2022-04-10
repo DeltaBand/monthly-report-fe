@@ -3,6 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 10vh var(--mor-primary) inset;
+
   .form {
     width: 20vw;
     height: 25vh;

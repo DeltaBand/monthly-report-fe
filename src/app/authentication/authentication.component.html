@@ -2,12 +2,12 @@
   <form class="form" [formGroup]="form" (ngSubmit)="signin()">
     <mat-form-field appearance="outline" class="input full">
       <mat-label>Email</mat-label>
-      <input type="email" matInput formControlName="email" placeholder="Placeholder" />
+      <input type="email" matInput formControlName="email" placeholder="Email" />
       <mat-icon matSuffix class="icon">email</mat-icon>
     </mat-form-field>
     <mat-form-field appearance="outline" class="input full">
-      <mat-label>Outline form field</mat-label>
-      <input type="password" matInput formControlName="password" placeholder="Placeholder" />
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password" placeholder="Password" />
       <mat-icon matSuffix>password</mat-icon>
     </mat-form-field>
     <button mat-flat-button type="submit" color="primary" class="full">Sign in</button>

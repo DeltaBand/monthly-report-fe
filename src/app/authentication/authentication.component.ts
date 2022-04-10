@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthenticationService } from './shared/authentication.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { AuthenticationService } from './shared/authentication.service';
 export class AuthenticationComponent implements OnInit {
   public form: FormGroup;
 
-  constructor(private fb: FormBuilder, private authenticationService: AuthenticationService) {
+  constructor(private fb: FormBuilder, private authenticationService: AuthenticationService, private router: Router) {
     this.form = this.fb.group({
       email: this.fb.control(null, [Validators.required, Validators.email]),
       password: this.fb.control(null, [Validators.required]),
@@ -26,12 +27,14 @@ export class AuthenticationComponent implements OnInit {
   public signin(): void {
     if (this.form.invalid) {
       this.form.updateValueAndValidity();
-      console.log('Authentication invalid', this.form);
-
       return;
     }
-    console.log('Authenticating');
 
-    this.authenticationService.authenticate();
+    this.authenticationService.authenticate().subscribe((isAuthenticated) => {
+      if (isAuthenticated) {
+        console.log('Redirecting');
+        this.router.navigate(['']);
+      }
+    });
   }
 }

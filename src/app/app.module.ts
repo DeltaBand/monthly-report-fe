@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, AuthenticationModule],
+  imports: [BrowserModule, AuthenticationModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [{ provide: APP_BASE_HREF, useValue: '/mor' }],
   bootstrap: [AppComponent],
 })
