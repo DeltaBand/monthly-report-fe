@@ -116,8 +116,9 @@
       }
     }
   },
-  "defaultProject": "monthly-report-fe",
   "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
