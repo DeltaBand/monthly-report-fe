@@ -29,6 +29,9 @@ $monthly-report-fe-accent: mat.define-palette(mat.$amber-palette, A200, A100, A4
 // $morA700: #6200ea;
 :root {
   --mor-primary: #673ab7;
+  --mor-primary-rgb: rgb(103, 58, 183);
+  --mor-danger: #f44336;
+  --mor-danger-light: #ef9a9a;
 }
 
 // The warn palette is optional (defaults to red).

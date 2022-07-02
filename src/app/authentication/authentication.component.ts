@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthenticationDto } from './shared/authentication.model';
 import { AuthenticationService } from './shared/authentication.service';
 
 @Component({
@@ -19,9 +20,7 @@ export class AuthenticationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.authenticationService.isAuthenticated()) {
-      this.authenticationService.authenticate();
-    }
+    console.log('Auth init');
   }
 
   public signin(): void {
@@ -30,11 +29,15 @@ export class AuthenticationComponent implements OnInit {
       return;
     }
 
-    this.authenticationService.authenticate().subscribe((isAuthenticated) => {
-      if (isAuthenticated) {
-        console.log('Redirecting');
-        this.router.navigate(['']);
-      }
+    this.authenticationService.authenticate(this.buildAuthentication()).subscribe((jwt) => {
+      this.router.navigate(['monthly-report']);
     });
+  }
+
+  private buildAuthentication(): AuthenticationDto {
+    return {
+      email: this.form.get('email')?.value,
+      password: this.form.get('password')?.value,
+    };
   }
 }

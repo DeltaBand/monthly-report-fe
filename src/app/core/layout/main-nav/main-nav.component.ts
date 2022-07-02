@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/authentication/shared/authentication.service';
 
 @Component({
@@ -7,10 +8,16 @@ import { AuthenticationService } from 'src/app/authentication/shared/authenticat
   styleUrls: ['./main-nav.component.scss'],
 })
 export class MainNavComponent {
-  constructor(private authenticationService: AuthenticationService) {}
+  constructor(private authenticationService: AuthenticationService, private router: Router) {}
+
+  public navigate(route: any): void {
+    this.router.navigateByUrl(route);
+  }
 
   public logout(): void {
     console.log('logout');
-    this.authenticationService.logout();
+    this.authenticationService.logout().subscribe(() => {
+      this.router.navigate(['/', 'signin']);
+    });
   }
 }

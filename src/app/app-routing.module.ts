@@ -3,10 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthenticationGuard } from './core/guards/authentication.guard';
 
 const routes: Routes = [
-  { path: '', loadChildren: () => import('./home/home.module').then((m) => m.HomeModule), canActivate: [AuthenticationGuard] },
+  {
+    path: 'monthly-report',
+    loadChildren: () => import('./monthly-report/monthly-report.module').then((m) => m.MonthlyReportModule),
+    canActivate: [AuthenticationGuard],
+    canActivateChild: [AuthenticationGuard],
+  },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'signin',
   },
 ];
 

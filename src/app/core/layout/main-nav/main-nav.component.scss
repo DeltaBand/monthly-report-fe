@@ -1,23 +1,39 @@
 .navigation {
   .menu {
+    display: flex;
+    justify-content: center;
     list-style: none;
     padding: 12px;
     margin: 0;
 
     .item {
       width: 200px;
+      padding: 12px 24px;
 
       .link {
         text-decoration: none;
-        color: #000;
+        color: var(--mor-primary);
         display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        mat-icon {
+          margin: 0 6px;
+        }
       }
 
       &:hover {
         cursor: pointer;
-        background-color: var(--primary-light);
+        background-color: var(--mor-primary);
         & > .link {
-          color: var(--primary);
+          color: #fff;
+        }
+        &:last-of-type {
+          background-color: transparent;
+          border: 1px solid var(--mor-danger-light);
+          & > .link {
+            color: var(--mor-danger-light);
+          }
         }
       }
     }

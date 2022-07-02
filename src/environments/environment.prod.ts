@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  api: {
+    monthlyReportApi: 'https://localhost:8080',
+  },
+  production: true,
 };
