@@ -4,8 +4,8 @@ import { AuthenticationGuard } from './core/guards/authentication.guard';
 
 const routes: Routes = [
   {
-    path: 'monthly-report',
-    loadChildren: () => import('./monthly-report/monthly-report.module').then((m) => m.MonthlyReportModule),
+    path: '',
+    loadChildren: () => import('./layout/layout.module').then((m) => m.LayoutModule),
     canActivate: [AuthenticationGuard],
     canActivateChild: [AuthenticationGuard],
   },

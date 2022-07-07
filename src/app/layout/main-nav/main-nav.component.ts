@@ -11,7 +11,7 @@ export class MainNavComponent {
   constructor(private authenticationService: AuthenticationService, private router: Router) {}
 
   public navigate(route: any): void {
-    this.router.navigateByUrl(route);
+    this.router.navigate([route]);
   }
 
   public logout(): void {

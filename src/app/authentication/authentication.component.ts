@@ -30,7 +30,7 @@ export class AuthenticationComponent implements OnInit {
     }
 
     this.authenticationService.authenticate(this.buildAuthentication()).subscribe((jwt) => {
-      this.router.navigate(['monthly-report']);
+      this.router.navigate(['/']);
     });
   }
 

@@ -1,19 +1,19 @@
 <nav class="navigation">
   <ul class="menu">
     <li class="item">
-      <a class="link" routerLink="home">
+      <a class="link" (click)="navigate('home')">
         <mat-icon>dashboard</mat-icon>
         <span class="nav-caption">Dash</span>
       </a>
     </li>
     <li class="item">
-      <a class="link" routerLink="monthly-report">
+      <a class="link" (click)="navigate('monthly-report')">
         <mat-icon>summarize</mat-icon>
         <span class="nav-caption">Monthly Report</span>
       </a>
     </li>
     <li class="item">
-      <a class="link" routerLink="users">
+      <a class="link" (click)="navigate('users')">
         <mat-icon>people</mat-icon>
         <span class="nav-caption">Users</span>
       </a>
